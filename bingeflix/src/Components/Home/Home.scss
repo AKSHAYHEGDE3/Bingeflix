@@ -1,0 +1,47 @@
+.d-block{
+    height: 60vh;
+    object-fit:cover;
+}
+
+.bar{
+    background-color: #131519;
+}
+
+.trending{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+
+.btn{
+    background-color: #50C878;
+    color: white;
+}
+
+.box{
+    color: white;
+}
+
+.img{
+    width: 200px;
+    height: 300px;
+    object-fit:cover;
+}
+
+.title{
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+.rating{
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 576px){
+    .box{
+        width: 50%;
+    }
+    .img{
+        width: 150px;
+        height: 200px;
+    }
+}
