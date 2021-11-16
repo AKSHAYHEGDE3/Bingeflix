@@ -12,7 +12,7 @@ const Carousel = () => {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hcnZlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="..." />
+                        <img src="https://images4.alphacoders.com/116/thumbbig-1168133.webp" class="d-block w-100" alt="..." />
                     </div>
                     <div class="carousel-item">
                         <img src="..." class="d-block w-100" alt="..." />

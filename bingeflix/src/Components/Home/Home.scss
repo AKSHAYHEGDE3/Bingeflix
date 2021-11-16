@@ -18,30 +18,56 @@
     color: white;
 }
 
+.listContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .box{
     color: white;
+    height: 300px;
+    width: 200px;
 }
 
 .img{
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 80%;
     object-fit:cover;
-}
+    &:hover{
+        opacity: 0.5;
+    }
 
+}
+.playBtn{
+    font-size: 3rem;
+    position: relative;
+    bottom: 150px;
+    left: 60px;
+    color: #50C878;
+    background-color: white;
+    border-radius: 100%;
+    height: 46px;
+    width: 46px;
+
+}
 .title{
+    margin-top: 0;
     margin-bottom: 0;
     font-size: 1.2rem;
+   
+}
+
+.fas{
+    position: relative;
+    bottom: 12px;
+    right: 1px;
 }
 .rating{
     font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (max-width: 576px){
-    .box{
-        width: 50%;
-    }
-    .img{
-        width: 150px;
-        height: 200px;
-    }
-}
+
+
+
+
+ 

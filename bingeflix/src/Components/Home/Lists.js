@@ -1,8 +1,9 @@
 import React from 'react'
 import './Home.scss'
+import SingleItem from './SingleItem';
 
 const Lists = () => {
-
+   
     const data1 = [
         {id:1,name:'one piece',url:'https://images5.alphacoders.com/606/thumbbig-606284.webp',rating:10},
         {id:2,name:'naruto',url:'https://images2.alphacoders.com/135/thumbbig-135670.webp',rating:9.4},
@@ -19,19 +20,14 @@ const Lists = () => {
         <div>
             <div className="bar p-2 ">
                 <span className="trending mx-2">Trending</span>
-                <button type="button" class="btn ms-4 mb-1"><i className="fa fa-play-circle me-2"></i>Success</button>
+                <button type="button" class="btn ms-4 mb-1"><i className="fa fa-play-circle me-2"></i>Movies</button>
             </div>
-            <div class="row p-4">
+            <div class="listContainer p-4">
                 {
-                    data1.map((data)=>{
-                     return  <div key={data.id} className="col-lg-2 box p-2">
-                                <img className="img" src={data.url} alt={data.name} />
-                                <p className="title">{data.name.toUpperCase()}</p>
-                                <p className="rating ">Rating : {data.rating}/10</p>
-                             </div>
+                    data1.map((data,index)=>{
+                     return  <SingleItem data={data}/>
                     })
-                }
-               
+                }           
             </div>
         </div>
     )
