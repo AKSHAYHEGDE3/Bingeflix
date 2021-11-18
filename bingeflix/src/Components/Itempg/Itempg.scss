@@ -1,0 +1,75 @@
+.video{
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.infoBox{
+    border: 1px solid #50c878;
+    height: 150%;
+    width: 90%;
+    border-radius: 25px;
+    margin: 3% auto;
+    padding: 3%;
+    padding-bottom: 8%;
+    color: white;
+}
+
+.trailerImg{
+    height: 100%;
+    width: 100%;
+}
+
+.likeBox{
+    float: right;
+    font-size: 2rem;
+    position: relative;
+    bottom: 60px;
+}
+
+.like,.dislike{
+      margin: 0 10px ; 
+}
+
+.vote{
+    font-size: 1rem;
+}
+
+.info{
+    margin-top: 5%;
+}
+
+.playTrailerIcon{
+    color: #50c878;
+    background-color: white;
+    font-size: 3rem;
+    border-radius: 50%;
+    position: relative;
+    bottom: 60%;
+    left: 40%;
+    border: 1px solid #50c878 ;
+}
+
+.trailerVideo{
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width:760px) {
+    .trail{
+        display: none;
+    }
+    .likeBox{
+        bottom: 30px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .likeBox{
+        float: none;
+        bottom: 0;
+    }
+    .addinfo{
+        font-size: 0.8rem;
+    }
+}

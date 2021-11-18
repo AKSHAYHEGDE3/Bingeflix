@@ -27,9 +27,9 @@ const SingleItem = ({data}) => {
                                     style={{
                                         display:!isHovered ? "none" : "inline-block"
                                     }} 
-                                    className="playBtn" href="/"><i className="fas fa-play-circle"></i>
+                                    className="playBtn" href="/"><i className="playIcon fas fa-play-circle"></i>
                                 </a>
-                                <div style={{position:"relative", bottom:!isHovered?"0":"70px"}} className="desc"> 
+                                <div style={{position:"relative", bottom:!isHovered?"0":"60px"}} className="desc"> 
                                     <p className="title">{data.name.toUpperCase()}</p>
                                     <p className="rating ">Rating : {data.rating}/10</p>
                                 </div>
