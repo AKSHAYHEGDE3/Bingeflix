@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Itempg.scss"
-import { useState } from 'react'
+
 
 const Itempg = () => {
-        const [playTrailer,setPlayTrailer] = useState(false)
+       
 
     return (
         <div>
@@ -12,16 +12,8 @@ const Itempg = () => {
             </div>
             <div className="row infoBox">
                 <div className="col-md-4 col-12">
-                    {
-                        !playTrailer ? 
-                        <>
-                            <img onClick={()=>setPlayTrailer(true)} className="trailerImg" src="https://images5.alphacoders.com/606/thumbbig-606284.webp" alt="..." />
-                            <a onClick={()=>setPlayTrailer(true)} className="playTrailer" href="/"><i className="playTrailerIcon fas fa-play-circle"></i> </a>
-                        </> 
-                    :
-                        <video className="trailerVideo" autoplay progress controls src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761" />
-                    }
-                    <div className="mx-auto trail" style={{ border: "1px solid white", borderRadius: "10px", width: "100px", textAlign: "center",position:"relative",bottom:"10%" }}>
+                        <video className="trailerVideo"  progress controls src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761" />
+                    <div className="mx-auto trail" style={{ border: "1px solid white", borderRadius: "10px", width: "100px", textAlign: "center",marginTop:"2%" }}>
                         <i className="fas fa-video"></i>
                         <span style={{ fontFamily: "'Roboto',senserif", marginLeft: "2px" }}>Trailer</span>
                     </div>

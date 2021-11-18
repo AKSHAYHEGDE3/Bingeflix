@@ -1,7 +1,13 @@
 
 .navbar{
-    background-color: #131519;
+    background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
     width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    &.scrolled{
+        background-color: #131519;
+    }
 }
 
 .navbar-brand{
