@@ -33,7 +33,7 @@ const SingleItem = ({data}) => {
                                     <p className="title">{data.name.toUpperCase()}</p>
                                     <p className="rating ">Rating : {data.rating}/10</p>
                                 </div>
-                             </div> 
+                  </div> 
        
     )
 }

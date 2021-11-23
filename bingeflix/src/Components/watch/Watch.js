@@ -1,9 +1,8 @@
 import React from 'react'
-import './Home.scss'
-import SingleItem from './SingleItem';
+import SingleItem from '../Home/SingleItem'
+import './Watch.scss'
 
-const Lists = () => {
-   
+const Watch = () => {
     const data1 = [
         {id:1,name:'one piece',url:'https://images5.alphacoders.com/606/thumbbig-606284.webp',rating:10},
         {id:2,name:'naruto',url:'https://images2.alphacoders.com/135/thumbbig-135670.webp',rating:9.4},
@@ -18,19 +17,31 @@ const Lists = () => {
 
     return (
         <div>
-            <div className="bar p-2 ">
-                <span className="trending mx-2">Trending</span>
-                <button type="button" class="btn ms-4 mb-1"><i className="fa fa-play-circle me-2"></i>Movies</button>
-            </div>
-            <div class="listContainer p-4">
-                {
+                <div className="d-flex flex-row">
+                    <div className="genre pt-1">Adventure</div>
+                    <div className="dropdown">
+                        <button className="btn  dropdown-toggle ms-4 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Genre
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a className="dropdown-item" href="/">All</a></li>
+                            <li><a className="dropdown-item" href="/">Action</a></li>
+                            <li><a className="dropdown-item" href="/">Adventure</a></li>
+                            <li><a className="dropdown-item" href="/">Comedy</a></li>
+                            <li><a className="dropdown-item" href="/">Romance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <div className="watchLists ">
+            {
                     data1.map((data)=>{
                      return  <SingleItem data={data}/>
                     })
-                }           
+                }     
             </div>
         </div>
     )
 }
 
-export default Lists
+export default Watch

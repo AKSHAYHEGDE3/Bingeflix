@@ -1,0 +1,52 @@
+.d-flex{
+    padding: 2%;
+    margin-top: 80px;
+}
+.genre{
+    background-color: white;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.dropdown-toggle{
+    height: 30px;
+    padding-top: 0;
+    background-color: #50C878;
+}
+
+.watchLists{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width:960px) and (max-width:1220px) {
+    .box{
+        width: 16.5%;
+    }
+}
+
+@media (min-width:830px) and (max-width:959px) {
+    .box{
+        width: 20%;
+    }
+}
+
+@media (min-width:620px) and (max-width:830px) {
+    .box{
+        width: 25%;
+    }
+}
+
+@media (min-width:472px) and (max-width:620px) {
+    .box{
+        width: 33.3%;
+    }
+}
+
+@media (min-width:320px) and (max-width:472px) {
+    .box{
+        width: 50%;
+    }
+}
