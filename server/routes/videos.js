@@ -96,36 +96,26 @@ router.get('/fetchAllVideos',verify, async (req,res)=>{
 
 //GET TRENDING MOVIES
 
-router.get('/fetchTrendingVideos',verify, async (req,res)=>{
-    
+router.get('/fetchTrendingVideos', async (req,res)=>{
+    // console.log(req.user)
     const type = req.query.type;
-    if(req.user.isAdmin){
+    try{
         if(type === "movies"){
-            try{
                 const videos = await Videos.find({type:"movie",isTrending:true});
                 res.status(200).send(videos)
-             } catch(err){
-                res.status(500).json(err);
-          }
         } else if(type === "series"){
-            try{
                 const videos = await Videos.find({type:"series",isTrending:true});
                 res.status(200).send(videos)
-             } catch(err){
-                res.status(500).json(err);
-          }
-        } else {
-            try{
+        } else if(type === "animes") {
                 const videos = await Videos.find({type:"anime",isTrending:true});
                 res.status(200).send(videos)
-             } catch(err){
-                res.status(500).json(err);
-          }
         }
+    } catch(err){
+        res.status(500).send(err)
+    }
+        
      
-  } else {
-      res.status(403).json("You are not authorized");
-  }
+ 
 })
 
 // CAROUSEL IMGS

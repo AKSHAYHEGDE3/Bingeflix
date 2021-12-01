@@ -18,6 +18,8 @@ const Navbar = () => {
         localStorage.setItem('token','')
     }
 
+    
+
     return (
         <div >
             <nav className={isScrolled ? "navbar scrolled navbar-expand-lg navbar-dark " : "navbar navbar-expand-lg navbar-dark "}>
@@ -51,7 +53,7 @@ const Navbar = () => {
                             <i style={{fontSize:"1.8rem",padding:"2%"}} className="fas fa-user-circle"></i> 
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">{user.username}</a></li>
                                 <li><a className="dropdown-item" href="#">Favourites</a></li>
                                 <li style={{cursor:"pointer"}} onClick={handleLogout}><p className="dropdown-item" href="#">Logout</p></li>
                                 <li><a className="dropdown-item" href="#">Admin</a></li>

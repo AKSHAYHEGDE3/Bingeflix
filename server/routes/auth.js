@@ -81,7 +81,7 @@ router.post('/login', async (req, res) => {
 
 // VERIFY USER
 router.get('/verifyUser', verify, async (req, res) => {
-    console.log(req.user)
+    // console.log(req.user)
     if (req.user) {
         try {
             // console.log(req.user)

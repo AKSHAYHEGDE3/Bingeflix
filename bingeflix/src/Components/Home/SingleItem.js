@@ -8,8 +8,8 @@ const SingleItem = ({data}) => {
 
     return (
        
-            <div key={data.id} className="box p-2 ">
-                                <img className="img" src={data.url} alt={data.name} 
+            <div key={data._id} className="box p-2 ">
+                                <img className="img" src={data.image} alt={data.title} 
                                    onMouseEnter={()=>{console.log("t")
                                    
                                    setIsHovered(true)
@@ -31,8 +31,8 @@ const SingleItem = ({data}) => {
                                     className="playBtn" to="/itempg"><i className="playIcon fas fa-play-circle"></i>
                                 </Link>
                                 <div style={{position:"relative", bottom:!isHovered?"0":"60px"}} className="desc"> 
-                                    <p className="title">{data.name.toUpperCase()}</p>
-                                    <p className="rating ">Rating : {data.rating}/10</p>
+                                    <p className="title">{data.title.toUpperCase()}</p>
+                                    <p className="rating ">Rating : {data.rating ? data.rating : "-"}/10</p>
                                 </div>
                   </div> 
        
