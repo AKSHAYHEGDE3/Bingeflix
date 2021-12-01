@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
 import './Home.scss'
 
 const SingleItem = ({data}) => {
@@ -17,7 +18,7 @@ const SingleItem = ({data}) => {
                                    setIsHovered(false)
                                  }}
                                 />
-                                <a 
+                                <Link 
                                     onMouseEnter={()=>{console.log("t")
                                     setIsHovered(true)
                                      }}
@@ -27,8 +28,8 @@ const SingleItem = ({data}) => {
                                     style={{
                                         display:!isHovered ? "none" : "inline-block"
                                     }} 
-                                    className="playBtn" href="/"><i className="playIcon fas fa-play-circle"></i>
-                                </a>
+                                    className="playBtn" to="/itempg"><i className="playIcon fas fa-play-circle"></i>
+                                </Link>
                                 <div style={{position:"relative", bottom:!isHovered?"0":"60px"}} className="desc"> 
                                     <p className="title">{data.name.toUpperCase()}</p>
                                     <p className="rating ">Rating : {data.rating}/10</p>

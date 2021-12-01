@@ -21,7 +21,7 @@
 .listContainer{
     display: flex;
     flex-wrap: wrap;
-    margin-left: 5%;
+   
 }
 
 .box{
@@ -43,7 +43,7 @@
     font-size: 3rem;
     position: relative;
     bottom: 145px;
-    left: 65px;
+    left: 40%;
     color: #50C878;
     background-color: white;
     border-radius: 100%;
@@ -78,7 +78,7 @@
     }
     .playBtn{
         bottom: 125px;
-    left: 38px;
+        left: 40%
     }
 }
 

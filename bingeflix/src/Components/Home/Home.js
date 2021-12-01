@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <Carousel />
             <Lists />
-            <Link to="/itempg"><button>click</button></Link>
+            
         </div>
     )
 }
