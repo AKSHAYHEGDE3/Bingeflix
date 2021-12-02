@@ -47,8 +47,8 @@ function App() {
             <div>
             { user ? <Navbar />: ""}
               <Route exact path="/">{user?<Home />:<Login />}</Route>
-              <Route path="/watch">{user?<Watch />:<Login />}</Route>
-              <Route path="/itempg">{user?<Itempg />:<Login />}</Route>
+              <Route path="/watch/:type/:genre">{user?<Watch />:<Login />}</Route>
+              <Route path="/itempg/:id">{user?<Itempg />:<Login />}</Route>
             </div>
           </Switch>
         </UserContext.Provider>

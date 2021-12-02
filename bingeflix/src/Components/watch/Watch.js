@@ -1,19 +1,29 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import SingleItem from '../Home/SingleItem'
 import './Watch.scss'
+import {useParams} from "react-router-dom"
+import {useState,useEffect} from 'react'
+
 
 const Watch = () => {
-    const data1 = [
-        {id:1,name:'one piece',url:'https://images5.alphacoders.com/606/thumbbig-606284.webp',rating:10},
-        {id:2,name:'naruto',url:'https://images2.alphacoders.com/135/thumbbig-135670.webp',rating:9.4},
-        {id:3,name:'gintama',url:'https://images4.alphacoders.com/227/thumbbig-227724.webp',rating:9.5},
-        {id:4,name:'bleach',url:'https://images5.alphacoders.com/331/thumbbig-331316.webp',rating:9},
-        {id:5,name:'dragon ball',url:'https://images5.alphacoders.com/329/thumbbig-329756.webp',rating:9},
-        {id:6,name:'FMAB',url:'https://images3.alphacoders.com/862/thumbbig-862688.webp',rating:9.3},
-        {id:7,name:'black clover',url:'https://images6.alphacoders.com/871/thumbbig-871206.webp',rating:9.5},
-        {id:8,name:'attack on titans',url:'https://images3.alphacoders.com/653/thumbbig-653529.webp',rating:19},
-        {id:9,name:'one punch man',url:'https://images2.alphacoders.com/676/thumbbig-676433.webp',rating:9.3},
-    ]
+    const [videos,setVideos]=useState([])
+    const params = useParams();
+
+    useEffect(()=>{
+        const fetchVideos = async ()=>{
+            try{
+                const getVideos = await fetch(`http://localhost:5000/fetchAllVideos?type=${params.type}&genre=${params.genre}`)
+                const data = await getVideos.json()
+                setVideos(data)
+            } catch(err){
+                console.log(err)
+            }
+        }
+        fetchVideos();
+    },[params.type,params.genre])
+    
+    // console.log(videos)
 
     return (
         <div>
@@ -24,21 +34,23 @@ const Watch = () => {
                             Genre
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a className="dropdown-item" href="/">All</a></li>
-                            <li><a className="dropdown-item" href="/">Action</a></li>
-                            <li><a className="dropdown-item" href="/">Adventure</a></li>
-                            <li><a className="dropdown-item" href="/">Comedy</a></li>
-                            <li><a className="dropdown-item" href="/">Romance</a></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/all`}>All</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/action`}>Action</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/adventure`}>Adventure</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/comedy`}>Comedy</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/romance`}>Romance</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/sci-fi`}>Sci-fi</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}horror`}>Horror</Link></li>
                         </ul>
                     </div>
                 </div>
             
             <div className="watchLists ">
-            {
-                    data1.map((data)=>{
-                     return  <SingleItem data={data}/>
+                {
+                    videos.map(video=>{
+                        return <SingleItem data={video}/>
                     })
-                }     
+                }
             </div>
         </div>
     )

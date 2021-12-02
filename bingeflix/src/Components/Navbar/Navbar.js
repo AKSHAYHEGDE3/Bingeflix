@@ -34,13 +34,13 @@ const Navbar = () => {
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" to="/watch">Movies</Link>
+                                <Link className="nav-link active" to="/watch/movies/all">Movies</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/watch">Shows</Link>
+                                <Link className="nav-link active" aria-current="page" to="/watch/series/all">Shows</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/watch">Animes</Link>
+                                <Link className="nav-link active" aria-current="page" to="/watch/animes/all">Animes</Link>
                             </li>
 
                         </ul>
@@ -49,14 +49,14 @@ const Navbar = () => {
                             <input className="form-control " type="search" placeholder="Search" aria-label="Search" />
                         </form>
                        <div className="dropdown profile mt-sm-0 mt-3">
-                            <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button style={{backgroundColor:"transparent",border:"0.2px solid transparent"}} className="btn btn-success dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <i style={{fontSize:"1.8rem",padding:"2%"}} className="fas fa-user-circle"></i> 
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">{user.username}</a></li>
-                                <li><a className="dropdown-item" href="#">Favourites</a></li>
+                                <li><Link className="dropdown-item" to="/">{user.username}</Link></li>
+                                <li><Link className="dropdown-item" to="/">Favourites</Link></li>
                                 <li style={{cursor:"pointer"}} onClick={handleLogout}><p className="dropdown-item" href="#">Logout</p></li>
-                                <li><a className="dropdown-item" href="#">Admin</a></li>
+                                <li><Link className="dropdown-item" to="/">Admin</Link></li>
                             </ul>
                         </div>
 

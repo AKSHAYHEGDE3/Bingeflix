@@ -28,7 +28,7 @@ const SingleItem = ({data}) => {
                                     style={{
                                         display:!isHovered ? "none" : "inline-block"
                                     }} 
-                                    className="playBtn" to="/itempg"><i className="playIcon fas fa-play-circle"></i>
+                                    className="playBtn" to={`/itempg/${data._id}`}><i className="playIcon fas fa-play-circle"></i>
                                 </Link>
                                 <div style={{position:"relative", bottom:!isHovered?"0":"60px"}} className="desc"> 
                                     <p className="title">{data.title.toUpperCase()}</p>

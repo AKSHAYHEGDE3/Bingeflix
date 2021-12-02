@@ -10,10 +10,11 @@ const MovieSchema = new mongoose.Schema(
         duration : {type:Number},
         rating : {type:String},
         released_date : {type:Date},
-        genre : {type:String},
+        genre : {type:Array},
         isTrending : {type:Boolean,default:false},
         onCarousel : {type:Boolean,default:false},
         type:{type:String},
+        casts:{type:String}
     },
     {timestamps:true}
 );
