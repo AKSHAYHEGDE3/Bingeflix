@@ -14,7 +14,9 @@ const MovieSchema = new mongoose.Schema(
         isTrending : {type:Boolean,default:false},
         onCarousel : {type:Boolean,default:false},
         type:{type:String},
-        casts:{type:String}
+        casts:{type:String},
+        likedPeople:{type:Array},
+        dislikedPeople:{type:Array}
     },
     {timestamps:true}
 );

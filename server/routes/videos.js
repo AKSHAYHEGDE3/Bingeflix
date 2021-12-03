@@ -126,7 +126,7 @@ router.get('/fetchTrendingVideos', async (req, res) => {
 
 // CAROUSEL IMGS
 
-router.get('/getCarousel', verify, async (req, res) => {
+router.get('/getCarousel',  async (req, res) => {
     if (req.user.isAdmin) {
         try {
             const carousel = await Videos.find({ onCarousel: true });
@@ -139,5 +139,31 @@ router.get('/getCarousel', verify, async (req, res) => {
     }
 
 })
+
+    // LIKES 
+
+    router.put('/likeVideo',async(req,res)=>{
+        // console.log(req.body)
+        try{
+            const video = await Videos.findByIdAndUpdate(req.body.videoId,{likedPeople:req.body.liked},{new:true})
+            res.status(200).send(video)
+        } catch(err){
+            res.status(500).send(err)
+        }
+       
+    })
+
+    //  dislikes
+
+    router.put('/dislikeVideo',async(req,res)=>{
+        // console.log(req.body)
+        try{
+            const video = await Videos.findByIdAndUpdate(req.body.videoId,{dislikedPeople:req.body.disliked},{new:true})
+            res.status(200).send(video)
+        } catch(err){
+            res.status(500).send(err)
+        }
+       
+    })
 
 module.exports = router
