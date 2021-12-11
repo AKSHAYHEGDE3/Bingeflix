@@ -8,6 +8,9 @@ import Signup from './Components/Auth/Signup';
 import Watch from './Components/watch/Watch';
 import { useState, useEffect } from 'react';
 import { UserContext } from './UserContext'
+import AdminHome from './Components/Admin/AdminHome';
+import AdminSection from './Components/Admin/AdminSection';
+import CreateVideos from './Components/Admin/CreateVideos';
 
 
 function App() {
@@ -49,6 +52,9 @@ function App() {
               <Route exact path="/">{user?<Home />:<Login />}</Route>
               <Route path="/watch/:type/:genre">{user?<Watch />:<Login />}</Route>
               <Route path="/itempg/:id">{user?<Itempg />:<Login />}</Route>
+              <Route path="/admin">{user?<AdminHome />:<Login />}</Route>
+              <Route path="/adminSection/:lists">{user?<AdminSection />:<Login />}</Route>
+              <Route path="/addVideos">{user?<CreateVideos />:<Login />}</Route>
             </div>
           </Switch>
         </UserContext.Provider>

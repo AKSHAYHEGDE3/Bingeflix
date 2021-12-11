@@ -21,7 +21,7 @@
     float: right;
     font-size: 2rem;
     position: relative;
-    bottom: 60px;
+    bottom: 130px;
 }
 
 .like,.dislike{
@@ -36,28 +36,37 @@
     margin-top: 5%;
 }
 
-// .playTrailerIcon{
-//     color: #50c878;
-//     background-color: white;
-//     font-size: 3rem;
-//     border-radius: 50%;
-//     position: relative;
-//     bottom: 60%;
-//     left: 40%;
-//     border: 1px solid #50c878 ;
-// }
-
-.trailerVideo{
-    height: 100%;
-    width: 100%;
+.commentBox{
+    background-color: #50c878;
+    border: 1px solid white;
+    min-height: 200px;
+    overflow: hidden;
+    width: 90%;
+    margin: 3% auto;
+    padding: 3%;
+    color: white;
 }
 
-@media screen and (max-width:760px) {
+// .trailerVideo{
+//     height: 100%;
+//     width: 100%;
+// }
+
+@media (min-width:760px) and (max-width:970px) {
     .trail{
         display: none;
     }
     .likeBox{
-        bottom: 30px;
+        bottom: 80px;
+    }
+}
+
+@media (min-width:401px) and (max-width:760px) {
+    .trail{
+        display: none;
+    }
+    .likeBox{
+        bottom: 50px;
     }
 }
 

@@ -16,7 +16,8 @@ const MovieSchema = new mongoose.Schema(
         type:{type:String},
         casts:{type:String},
         likedPeople:{type:Array},
-        dislikedPeople:{type:Array}
+        dislikedPeople:{type:Array},
+        comments:{type:Array}
     },
     {timestamps:true}
 );

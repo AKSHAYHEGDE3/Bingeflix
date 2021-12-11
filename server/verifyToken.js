@@ -11,7 +11,7 @@ const verify = (req,res,next) =>{
                 console.log("not a valid token")
             } 
             req.user = user;
-            console.log(req.user)
+            // console.log(req.user)
             next();
             
         })

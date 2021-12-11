@@ -12,10 +12,10 @@ const Lists = () => {
     const [animes,setAnimes] = useState([])
 
     useEffect(()=>{
-        console.log("useeff")
+        // console.log("useeff")
         const fetchTrending = async()=>{
             try{
-                console.log("try")
+                // console.log("try")
                 const trendingMovies = await fetch("http://localhost:5000/fetchTrendingVideos?type=movies");
                 const trendingSeries = await fetch("http://localhost:5000/fetchTrendingVideos?type=series");
                 const trendingAnimes= await fetch("http://localhost:5000/fetchTrendingVideos?type=animes");
@@ -37,9 +37,9 @@ const Lists = () => {
     },[])
 
     // console.log(user)
-    console.log(movies)
-    console.log(series)
-    console.log(animes)
+    // console.log(movies)
+    // console.log(series)
+    // console.log(animes)
    
     return (
         <div>

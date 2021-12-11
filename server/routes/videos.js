@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Videos = require('../models/Videos');
+// const User = require('../models/User');
+const Comments = require('../models/Comments');
 const verify = require('../verifyToken');
 
 
@@ -50,6 +52,26 @@ router.delete('/deleteVideo/:id', verify, async (req, res) => {
     } else {
         res.status(403).json("You are not authorized");
     }
+})
+
+// SEARCH MOVIES
+
+router.post('/search', async(req,res)=>{
+       console.log(req.body.search)
+    
+        try{
+            Videos.find({ title: { $regex: req.body.search, $options: "i" } }, function(err, docs) {
+                // if(err){
+                //     console.log(err)
+                // }
+                res.status(200).send(docs)
+            });
+        } catch(err){
+            res.status(500).send(err)
+        }
+    
+        
+        
 })
 
 // FETCH MOVIE
@@ -142,7 +164,7 @@ router.get('/getCarousel',  async (req, res) => {
 
     // LIKES 
 
-    router.put('/likeVideo',async(req,res)=>{
+    router.put('/likeVideo',verify,async(req,res)=>{
         // console.log(req.body)
         try{
             const video = await Videos.findByIdAndUpdate(req.body.videoId,{likedPeople:req.body.liked},{new:true})
@@ -155,7 +177,7 @@ router.get('/getCarousel',  async (req, res) => {
 
     //  dislikes
 
-    router.put('/dislikeVideo',async(req,res)=>{
+    router.put('/dislikeVideo',verify,async(req,res)=>{
         // console.log(req.body)
         try{
             const video = await Videos.findByIdAndUpdate(req.body.videoId,{dislikedPeople:req.body.disliked},{new:true})
@@ -164,6 +186,31 @@ router.get('/getCarousel',  async (req, res) => {
             res.status(500).send(err)
         }
        
+    })
+
+    //  COMMENTS
+
+    router.post('/addComment',verify,async (req,res)=>{
+        const newComment = new Comments(req.body)
+        console.log(newComment)
+        try{
+            const savedComment = await newComment.save()   
+            await Videos.findByIdAndUpdate(req.body.videoId,{$push : {'comments' : savedComment}} ,{new: true,useFindAndModify: false});
+            res.status(200).send(savedComment)
+        } catch(err){
+            res.status(500).send(err)
+        }
+    })
+
+    router.get('/getComments/:id',async (req,res)=>{
+        console.log(req.params.id)
+        try{
+            const video = await Videos.findById(req.params.id);
+            const comments = video.comments;
+            res.status(200).send(comments)
+        } catch(err){
+            res.status(500).send(err)
+        }
     })
 
 module.exports = router
