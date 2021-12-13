@@ -11,11 +11,13 @@ import { UserContext } from './UserContext'
 import AdminHome from './Components/Admin/AdminHome';
 import AdminSection from './Components/Admin/AdminSection';
 import CreateVideos from './Components/Admin/CreateVideos';
+import EditVideos from './Components/Admin/EditVideos';
+
 
 
 function App() {
 
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     const verifyUser = async () => {
@@ -25,7 +27,7 @@ function App() {
           headers: { 'token': `bearer ${token}` },
         });
         const data = await res.json();
-        // console.log(data)
+        console.log(data)
         setUser(data);
         const authtoken =  user.accessToken
         localStorage.setItem('token', authtoken)
@@ -37,8 +39,8 @@ function App() {
     }
 
     verifyUser();
-  }, [])
-  // console.log(user)
+  },[] )
+  console.log(user)
   return (
     <Router>
       <div className="App">
@@ -46,6 +48,7 @@ function App() {
           <Switch>
             <Route exact path="/login">{user?<Redirect to='/' />:<Login />}</Route>
             <Route exact path="/signup">{user?<Redirect to='/' />:<Signup />}</Route>
+           
 
             <div>
             { user ? <Navbar />: ""}
@@ -55,6 +58,7 @@ function App() {
               <Route path="/admin">{user?<AdminHome />:<Login />}</Route>
               <Route path="/adminSection/:lists">{user?<AdminSection />:<Login />}</Route>
               <Route path="/addVideos">{user?<CreateVideos />:<Login />}</Route>
+              <Route path="/editVideos/:id">{user?<EditVideos />:<Login />}</Route>
             </div>
           </Switch>
         </UserContext.Provider>

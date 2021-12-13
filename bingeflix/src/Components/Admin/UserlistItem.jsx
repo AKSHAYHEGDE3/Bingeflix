@@ -26,8 +26,8 @@ const UserlistItem = ({item}) => {
             <div className="singleItem mt-4">
                         <span><i className="fas fa-user-circle"></i></span>
                         <span className='name'>{item.username}</span>
-                        <span className="edit"><i className="fas fa-edit me-3 me-md-5"></i>
-                         <i onClick={handleDelete} style={{color:"red",cursor:"pointer"}} className="fas fa-trash-alt "></i></span>
+                        {/* <span className="edit"><i className="fas fa-edit me-3 me-md-5"></i> */}
+                        <span className="delete">  <i onClick={handleDelete} style={{color:"red",cursor:"pointer"}} className="fas fa-trash-alt "></i></span>
             </div>
         </div>
     )

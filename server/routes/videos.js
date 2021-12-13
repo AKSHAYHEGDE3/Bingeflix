@@ -8,10 +8,12 @@ const verify = require('../verifyToken');
 
 // ADD MOVIE
 router.post('/addVideos', verify, async (req, res) => {
+    // console.log(req.body)
     if (req.user.isAdmin) {
         const newVideo = new Videos(req.body);
         try {
             const savedVideo = await newVideo.save()
+            // console.log(savedVideo)
             res.status(200).send(savedVideo)
         } catch (err) {
             res.status(500).send(err);
@@ -22,7 +24,8 @@ router.post('/addVideos', verify, async (req, res) => {
 })
 
 //UPDATE MOVIE
-router.put('/updateVideo', verify, async (req, res) => {
+router.put('/updateVideo/:id', verify, async (req, res) => {
+    console.log(req.body)
     if (req.user.isAdmin) {
         try {
             const updatedVideo = await Videos.findByIdAndUpdate(
@@ -57,7 +60,7 @@ router.delete('/deleteVideo/:id', verify, async (req, res) => {
 // SEARCH MOVIES
 
 router.post('/search', async(req,res)=>{
-       console.log(req.body.search)
+    //    console.log(req.body.search)
     
         try{
             Videos.find({ title: { $regex: req.body.search, $options: "i" } }, function(err, docs) {
@@ -84,7 +87,17 @@ router.get("/fetchVideo/:id", async (req, res) => {
     }
 });
 
-//   FETCH ALL MOVIES
+//FETCH ALL VIDEOS
+router.get('/fetchall',async(req,res)=>{
+    try{
+        const videos = await Videos.find();
+        res.status(200).send(videos)
+    }catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+//   FETCH ALL MOVIES,SERIES,ANIMES
 router.get('/fetchAllVideos', async (req, res) => {
     const type = req.query.type;
     const genre = req.query.genre;
@@ -149,17 +162,13 @@ router.get('/fetchTrendingVideos', async (req, res) => {
 // CAROUSEL IMGS
 
 router.get('/getCarousel',  async (req, res) => {
-    if (req.user.isAdmin) {
+   
         try {
             const carousel = await Videos.find({ onCarousel: true });
             res.status(200).send(carousel)
         } catch (err) {
             res.status(500), send(err)
         }
-    } else {
-        res.status(403).json("You are not authorized");
-    }
-
 })
 
     // LIKES 
@@ -192,7 +201,7 @@ router.get('/getCarousel',  async (req, res) => {
 
     router.post('/addComment',verify,async (req,res)=>{
         const newComment = new Comments(req.body)
-        console.log(newComment)
+        // console.log(newComment)
         try{
             const savedComment = await newComment.save()   
             await Videos.findByIdAndUpdate(req.body.videoId,{$push : {'comments' : savedComment}} ,{new: true,useFindAndModify: false});
@@ -203,7 +212,7 @@ router.get('/getCarousel',  async (req, res) => {
     })
 
     router.get('/getComments/:id',async (req,res)=>{
-        console.log(req.params.id)
+        // console.log(req.params.id)
         try{
             const video = await Videos.findById(req.params.id);
             const comments = video.comments;

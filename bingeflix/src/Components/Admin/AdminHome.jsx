@@ -27,7 +27,7 @@ const AdminHome = () => {
        }
     }
     fetchResources();
-}, [users,movies,series,animes])
+}, [])
 
     
 

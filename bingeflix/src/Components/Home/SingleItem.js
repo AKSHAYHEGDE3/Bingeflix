@@ -9,6 +9,7 @@ const SingleItem = ({data}) => {
     return (
        
             <div key={data._id} className="box p-2 ">
+                                <Link to={`/itempg/${data._id}`} >
                                 <img className="img" src={data.image} alt={data.title} 
                                    onMouseEnter={()=>{console.log("t")
                                    
@@ -17,7 +18,7 @@ const SingleItem = ({data}) => {
                                  onMouseLeave={()=>{console.log("f")
                                    setIsHovered(false)
                                  }}
-                                />
+                                /> </Link>
                                 <Link 
                                     onMouseEnter={()=>{console.log("t")
                                     setIsHovered(true)

@@ -39,14 +39,12 @@ a{
     margin-left: 20%;
 }
 
-
-
 .edit{
     float: right;
     color: green;
 }
-
 .delete{
+    
     color: red;
 }
 
@@ -55,6 +53,28 @@ a{
     height : 50px;
     width: 50px;
     object-fit: cover;
+}
+
+.form{
+    margin-top: 12%;
+    padding: 2%;
+}
+.label{
+    color: white;
+    margin-top: 2%;
+}
+.input{
+    color: black;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 70%;
+}
+
+.create{
+    margin-top: 4%;
+    background-color: #50C878 ;
+    color: white;
+    margin-left: 40%;
 }
 
 @media (min-width:400px) and (max-width:520px){

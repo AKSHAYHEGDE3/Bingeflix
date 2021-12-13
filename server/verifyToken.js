@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken');
 
 const verify = (req,res,next) =>{
-    // console.log(req.headers)
+    console.log("----verify----")
+    console.log(req.headers.token)
     const authHeaders = req.headers.token;
     if(authHeaders){
         const token = authHeaders.split(" ")[1];
@@ -11,7 +12,7 @@ const verify = (req,res,next) =>{
                 console.log("not a valid token")
             } 
             req.user = user;
-            // console.log(req.user)
+            console.log(req.user)
             next();
             
         })

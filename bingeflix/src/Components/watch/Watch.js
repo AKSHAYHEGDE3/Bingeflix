@@ -40,7 +40,8 @@ const Watch = () => {
                             <li><Link className="dropdown-item" to={`/watch/${params.type}/comedy`}>Comedy</Link></li>
                             <li><Link className="dropdown-item" to={`/watch/${params.type}/romance`}>Romance</Link></li>
                             <li><Link className="dropdown-item" to={`/watch/${params.type}/sci-fi`}>Sci-fi</Link></li>
-                            <li><Link className="dropdown-item" to={`/watch/${params.type}horror`}>Horror</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/horror`}>Horror</Link></li>
+                            <li><Link className="dropdown-item" to={`/watch/${params.type}/mystery`}>Mystery</Link></li>
                         </ul>
                     </div>
                 </div>
