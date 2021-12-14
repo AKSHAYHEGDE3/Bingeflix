@@ -21,9 +21,7 @@ catch(err=>console.log(err))
 
 app.use(express.json())
 
-app.listen(5000,()=>{
-    console.log("server is running")
-})
+
 
 
 //ROUTES
@@ -36,3 +34,12 @@ const videoRoutes = require('./routes/videos')
 app.use(authRoutes)
 app.use(userRoutes)
 app.use(videoRoutes)
+
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("bingeflix/build"))
+}
+
+app.listen(process.env.PORT || 5000,()=>{
+    console.log("server is running")
+})
