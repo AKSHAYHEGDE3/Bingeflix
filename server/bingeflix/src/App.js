@@ -12,7 +12,7 @@ import AdminHome from './Components/Admin/AdminHome';
 import AdminSection from './Components/Admin/AdminSection';
 import CreateVideos from './Components/Admin/CreateVideos';
 import EditVideos from './Components/Admin/EditVideos';
-
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
@@ -59,6 +59,7 @@ function App() {
               <Route path="/adminSection/:lists">{user?<AdminSection />:<Login />}</Route>
               <Route path="/addVideos">{user?<CreateVideos />:<Login />}</Route>
               <Route path="/editVideos/:id">{user?<EditVideos />:<Login />}</Route>
+              { user ? <Footer />: ""}
             </div>
           </Switch>
         </UserContext.Provider>

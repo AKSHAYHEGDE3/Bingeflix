@@ -28,7 +28,7 @@ const Watch = () => {
     return (
         <div>
                 <div className="d-flex flex-row">
-                    <div className="genre pt-1">Adventure</div>
+                    <div className="genre pt-1">{params.genre}</div>
                     <div className="dropdown">
                         <button className="btn  dropdown-toggle ms-4 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Genre

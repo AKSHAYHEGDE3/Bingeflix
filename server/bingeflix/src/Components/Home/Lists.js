@@ -43,7 +43,7 @@ const Lists = () => {
    
     return (
         <div>
-            <div className="bar p-2 ">
+            <div className="bar p-2 mt-5 mt-md-0">
                 <span className="trending mx-2">Trending</span>
                 <button type="button" class="btn ms-4 mb-1"><i className="fa fa-play-circle me-2"></i>Movies</button>
             </div>

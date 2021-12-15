@@ -1,0 +1,28 @@
+
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 4%;
+
+}
+
+.fa-github{
+    color: white;
+   
+}
+
+.fa-instagram{
+    color: #fb3958;
+}
+
+.fa-linkedin{
+    color: #2867B2;
+    border-radius: 100%;
+}
+
+
+
+.social{
+    font-size: 3rem;
+}

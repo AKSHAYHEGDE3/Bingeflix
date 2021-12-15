@@ -141,7 +141,7 @@ const Itempg = () => {
                                     video.genre.map(gen => `${gen} , `) : ""
                             }
                         </span><br />
-                        <span className="addinfo">Casts: </span> <span className="addinfo" style={{ marginLeft: "2%" }}>Action , Adventure , Comedy</span>
+                        <span className="addinfo">Casts: </span> <span className="addinfo" style={{ marginLeft: "2%" }}>{video?.casts}</span>
                     </div>
                 </div>
             </div>
