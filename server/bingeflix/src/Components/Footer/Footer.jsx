@@ -3,7 +3,7 @@ import "./footer.css"
 
 const Footer = () => {
     return (
-        <div className='footer'> 
+        <div className='footer mt-4'> 
             <h3 style={{width:"270px"}} className='mx-auto'>connect with me :</h3>
             <div className='text-center mt-4'>
                 <a href="https://github.com/AKSHAYHEGDE3"><i class="fab fa-github social mx-3"></i></a> 
