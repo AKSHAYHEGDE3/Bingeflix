@@ -69,7 +69,7 @@ const EditVideos = () => {
     return (
         <div>
             <div className='container'>
-                <form className='form' onSubmit={handleSubmit} >
+                <form className='form addForm' onSubmit={handleSubmit} >
                     <label className='label'>Title :</label>
                     <input type="text" name="title" onChange={handleChange} className='input'  /> <br />
 

@@ -34,8 +34,8 @@ const AdminSection = () => {
 
     return (
         <div className="container">
-             <div style={{marginTop:"8%"}} className="text-end">
-          {  type !== "users" ? <Link to="/addVideos"><button style={{backgroundColor:"blue"}} type="button" class="btn btn-primary" >ADD +</button></Link> :"" }
+             <div style={{marginTop:"8%"}} className="text-end add-sec">
+          {  type !== "users" ? <Link to="/addVideos"><button style={{backgroundColor:"blue"}} type="button" class="btn btn-primary addBtn" >ADD +</button></Link> :"" }
             </div>
             <div className="showItems">
                 <h3 style={{width:"65px"}} className="mx-auto">{type}</h3>

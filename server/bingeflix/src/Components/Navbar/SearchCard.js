@@ -5,9 +5,8 @@ const SearchCard = ({video}) => {
     return (
         <div>
             <div className="m-2 p-1 border border-success">
-                <span style={{color:"white",fontSize:"1.3rem",marginLeft:"1%"}} >{video.title}</span>
-               <img className="searchImage" src={video.image} alt={video.title} />
-                
+            <img className="searchImage" src={video.image} alt={video.title} />
+                <span style={{color:"white",fontSize:"1.3rem",marginLeft:"4%"}} >{video.title}</span>
             </div>
         </div>
     )

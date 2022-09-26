@@ -47,7 +47,7 @@ const CreateVideos = () => {
     return (
         <div>
             <div className='container'>
-                <form className='form' onSubmit={handleSubmit}>
+                <form className='form addForm' onSubmit={handleSubmit}>
                     <label className='label'>Title :</label>
                     <input type="text" onChange={e=>setTitle(e.target.value)} className='input'  /> <br />
 
